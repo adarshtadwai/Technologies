@@ -1,0 +1,19 @@
+git --version                                 |                   current version of git
+git --help                                    |                   shows some common commands in git
+git --help [command name]                     |                   show the documentation of specific command
+git config --global user.name "addy"          |                   configurate local git with name
+git config --global user.email "tad@gmail"    |                   configurate local git with email
+git config --global core.editor "notepad"     |                   create the type of text editor to use
+touch text_name.txt                           |                   create a file 
+rm text_name.txt                              |                   remove the file with given name
+notepad text_name.txt                         |                   opens a text file 
+mkdir addy                                    |                   make directory
+cd                                            |                   change directory
+pwd                                           |                   present working directory
+ls                                            |                   list of directories
+git status                                    |
+git add text_name.txt                         |                   start tracking file with given name
+git commit -m "create my list"                |                   -m stands for deliver msg and commit starts tracking
+git log                                       |                   explains the history of commits on the working file
+git diff                                      |                   show the difference between different versions
+git log -1                                    |                   most recent commit
