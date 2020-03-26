@@ -17,3 +17,6 @@ git commit -m "create my list"                |                   -m stands for 
 git log                                       |                   explains the history of commits on the working file
 git diff                                      |                   show the difference between different versions
 git log -1                                    |                   most recent commit
+git diff --staged
+git diff <7lettersofcommitcode>               |                   difference between current and file at that commit stage
+git reset HEAD~1 --mixed (soft/Hard)          |
