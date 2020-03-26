@@ -20,3 +20,12 @@ git log -1                                    |                   most recent co
 git diff --staged
 git diff <7lettersofcommitcode>               |                   difference between current and file at that commit stage
 git reset HEAD~1 --mixed (soft/Hard)          |
+git branch br_name                            |                   creates a branch named br_name apart, control lies in master branch
+git checkout br_name                          |                   control changes to br_name(branch name)
+                                                                  {different versions can be developed in parallel using branching}
+git merge br_name                             |                   merges br_name brach to master branch
+git remote add origin <url>                   |                   add the file into github to url repository
+git push origin master                        |                           "   "   "
+git clone <url>                               |                   Download repository into local machine
+git fetch
+git pull
