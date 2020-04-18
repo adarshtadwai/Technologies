@@ -14,7 +14,7 @@ cd                                            |                   change directo
 pwd                                           |                   present working directory
 ls                                            |                   list of directories
 git status                                    |                   what is going on right now.
-git add text_name.txt                         |                   start tracking file with given name
+git add text_name.txt                         |                   start tracking file with given name [Staging Area]  `
 git commit -m "create my list"                |                   -m stands for deliver msg and commit starts tracking
 git log                                       |                   explains the history of commits on the working file
 git diff                                      |                   show the difference between different versions
