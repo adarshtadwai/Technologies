@@ -1,0 +1,102 @@
+                                          COMMANDS
+git --version                                 |                   current version of git
+git --help                                    |                   shows some common commands in git
+git --help [command name]                     |                   show the documentation of specific command
+git config --global user.name "addy"          |                   configurate local git with name
+git config --global user.email "tad@gmail"    |                   configurate local git with email
+git config --global core.editor "notepad"     |                   create the type of text editor to use
+touch text_name.txt                           |                   create a file 
+rm text_name.txt                              |                   remove the file with given name
+notepad text_name.txt                         |                   opens a text file 
+mkdir addy                                    |                   make directory
+git init                                      |                   Initialize an empty git repository.
+cd                                            |                   change directory
+pwd                                           |                   present working directory
+ls                                            |                   list of directories
+git status                                    |                   what is going on right now.
+git add text_name.txt                         |                   start tracking file with given name
+git commit -m "create my list"                |                   -m stands for deliver msg and commit starts tracking
+git log                                       |                   explains the history of commits on the working file
+git diff                                      |                   show the difference between different versions
+git log -1                                    |                   most recent commit
+git diff --staged
+git diff <7lettersofcommitcode>               |                   difference between current and file at that commit stage
+git reset HEAD~1 --mixed (soft/Hard)          |
+git branch br_name                            |                   creates a branch named br_name apart, control lies in master branch
+git checkout br_name                          |                   control changes to br_name(branch name)
+                                                                  {different versions can be developed in parallel using branching}
+git merge br_name                             |                   merges br_name brach to master branch
+git remote add origin <url>                   |                   add the file into github to url repository
+git push origin master                        |                           "   "   "
+git clone <url>                               |                   Download repository into local machine
+git fetch
+git pull
+
+_____________________________________________________________________________________________________________________________________
+
+                                          CONCEPT OF GIT 
+  // a file is a bunch of bytes
+  File :
+    type blob = Array<byte> [File in git is called a blob]
+    
+  // a directory contains named files and directories
+  Directory / Folder :
+    type tree = map<string, tree|blob> [Folder in git is called a tree]
+    
+  // a commit has parents, metadata, and the top-level tree
+  Snapshot :
+    type Commit = struct{
+      parents : Array<*Commit>;
+      author  : String;
+      message : String;
+      Contents: *Tree;
+     }                                [Snapshot in git is called Commit]
+     
+   Objects and content-addressing in Git :
+   Object in Git:
+   type obj = blob | tree | Commit;
+   
+   //-- In Git all objects are content Addressed.
+   RelateToDisk = map<string, object>
+   
+   //--Store Algorithm
+   function store(obj){
+      id = Hash(obj); //Hash Function returns a unique string for a given obj which is 40 Hexadecimals long.
+      RelateToDisk[id] = obj;
+   }
+   //--Retrieve Algorithm
+   function load(id){
+      return RelateToDisk[id];
+   }
+   * When objects in git reference other objects, they don’t actually contain them in their on-disk representation,
+     but have a reference to them by their hash.
+   
+    Example :
+    
+                                      <root> (tree)
+                                      |
+                                      +- foo (tree)
+                                      |  |
+                                      |  + bar.txt (blob, contents = "hello world")
+                                      |
+                                      +- baz.txt (blob, contents = "git is wonderful")
+                                      
+    The tree for the example directory structure looks like this [Use git cat-file -p 698281bc680d1995c5f4caaf3359721a5a58d48d}:
+                             __________________________________________________________________
+                             | 100644 blob 4448adbf7ecd394f42ae135bbeed9676e894af85    baz.txt|
+                             | 040000 tree c68d233a33c5c06e0340e4c224f0afca87c8ce87    foo    |
+                             |________________________________________________________________|
+    If we want to extract contents from baz Use [git cat-file -p 4448adbf7ecd394f42ae135bbeed9676e894af85]
+                             __________________
+                             |git is wonderful|
+                             |________________|
+                             
+  REFERENCES 
+  Reference = map<string, string> [They are pointers to commits, ie., converts the value of hash function to human readable form.
+  * References are mutable(i.e., can be upadated to point to a new commit). 
+  * For example master branch refere to the latest commit in the main branch of development.
+  * In history of commits, the current commit where we are now is called "Head".
+  Repository :
+  def -> Data Objects and References in git is called Git Repository.
+  * After Initializing a git repository there will a hidden file[ls -a] name .git[ls .git] which stores all the information of data.
+
