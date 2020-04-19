@@ -5,7 +5,6 @@ git --help [command name]                     |                   show the docum
 git config --global user.name "addy"          |                   configurate local git with name
 git config --global user.email "tad@gmail"    |                   configurate local git with email
 git config --global core.editor "notepad"     |                   create the type of text editor to use
-touch text_name.txt                           |                   create a file 
 rm text_name.txt                              |                   remove the file with given name
 notepad text_name.txt                         |                   opens a text file 
 mkdir addy                                    |                   make directory
@@ -15,7 +14,8 @@ cd                                            |                   change directo
 pwd                                           |                   present working directory
 ls                                            |                   list of directories
 git status                                    |                   what is going on right now.
-git add text_name.txt                         |                   start tracking file with given name [Staging Area]  `
+git add text_name.txt                         |                   start tracking file with given name [Staging Area] 
+git add -u                                    |                   stages the 'modified' file.
 git commit -m "create my list"                |                   -m stands for deliver msg and commit starts tracking
 git log                                       |                  visualizes the commit history[shows flattened version and not graph like]
 git log --all --graph --decorate              |                  visualizes the commit history[shows graph like structure [it is a DAG!]
@@ -24,8 +24,10 @@ git diff                                      |                   show the diffe
 git log -1                                    |                   most recent commit
 git diff --staged
 git diff <7lettersofcommitcode>               |                   difference between current and file at that commit stage
+git diff HEAD~1..                             |                   difference between head and head~1(last but one head).
 git diff <h1> <h2> git.txt                    |                   changes from h1 to h2 in git.txt file
 git reset HEAD~1 --mixed (soft/Hard)          |
+git reset --hard HEAD                         |                   resets(changed) copies if any to HEAD 
 git branch br_name                            |                   creates a branch named br_name apart, control lies in master branch
 git checkout br_name                          |                   control changes to br_name(branch name)
                                                                   {different versions can be developed in parallel using branching}
@@ -36,7 +38,20 @@ git clone <url>                               |                   Download repos
 git fetch
 git pull
 clear                                         |                    clears GitBash
-_____________________________________________________________________________________________________________________________________
+cat file                                      |                   Read the file
+rm file                                       |                     remove file
+touch text_name.txt                           |                   create a file
+rm file.txt git.txt                           |                     Rename file.txt to git.txt
+
+
+
+
+
+
+
+
+
+_________________________________________________________________________________________________________________________________
 
                                           CONCEPT OF GIT 
   // a file is a bunch of bytes
