@@ -24,6 +24,7 @@ git diff                                      |                   show the diffe
 git log -1                                    |                   most recent commit
 git diff --staged
 git diff <7lettersofcommitcode>               |                   difference between current and file at that commit stage
+git diff <h1> <h2> git.txt                    |                   changes from h1 to h2 in git.txt file
 git reset HEAD~1 --mixed (soft/Hard)          |
 git branch br_name                            |                   creates a branch named br_name apart, control lies in master branch
 git checkout br_name                          |                   control changes to br_name(branch name)
