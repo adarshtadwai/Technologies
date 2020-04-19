@@ -34,7 +34,7 @@ git push origin master                        |                           "   " 
 git clone <url>                               |                   Download repository into local machine
 git fetch
 git pull
-
+clear                                         |                    clears GitBash
 _____________________________________________________________________________________________________________________________________
 
                                           CONCEPT OF GIT 
