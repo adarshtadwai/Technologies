@@ -29,16 +29,19 @@ git diff <h1> <h2> git.txt                    |                   changes from h
 git reset HEAD~1 --mixed (soft/Hard)          |
 git reset --hard HEAD                         |                   resets(changed) copies if any to HEAD 
 git branch                                    |                   gives all the branches in the repository
+git branch -r                                 |                   gives the branches that got merged
 git branch br_name                            |                   creates a branch named br_name apart, control lies in master branch
 git checkout br_name                          |                   control changes to br_name(branch name)
                                                                   {different versions can be developed in parallel using branching}
 git merge br_name                             |                   merges br_name brach to master branch
+
 git remote add origin <url>                   |                   add the file into github to url repository
 git push origin master                        |                           "   "   "
 git clone <url>                               |                   Download repository into local machine
-git fetch
-git pull
-clear                                         |                    clears GitBash
+  *if cloning fails then use < git config --global http.sslVerify false > and try again.
+git fetch                                     |
+git pull                                      |
+clear                                         |                   clears GitBash
 cat file                                      |                   Read the file
 rm file                                       |                     remove file
 touch text_name.txt                           |                   create a file
